@@ -16,7 +16,7 @@ class AuthController extends Controller
     public function register(Register $request){
         try{
             if (User::where('email',$request->email)->exists()){
-                return $this->setResponse->MakeResponse([],'email exist',false,404);
+                return $this->setResponse->MakeResponse([],'email exist',false,400);
             }
             $user = User::create($request->validated());
             // create token
