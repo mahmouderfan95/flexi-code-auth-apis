@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\API;
 
 use App\Helpers\SetResponse;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Api\ServiceResourceApi;
+use App\Http\Resources\API\ServiceResourceApi;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
