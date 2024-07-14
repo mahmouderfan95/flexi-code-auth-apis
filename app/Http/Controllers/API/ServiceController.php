@@ -21,4 +21,8 @@ class ServiceController extends Controller
             return $this->setResponse->MakeResponse(ServiceResourceApi::collection($services),'success message',true,200);
         return $this->setResponse->MakeResponse([],'data not found',false,404);
     }
+    public function booking(Request $request)
+    {
+        return $request;
+    }
 }

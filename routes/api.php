@@ -27,3 +27,5 @@ Route::group(['middleware' => 'guest:sanctum'],function(){
 });
 // get services
 Route::get('services',[ServiceController::class,'index']);
+// booking service
+Route::post('service/booking',[ServiceController::class,'booking']);
