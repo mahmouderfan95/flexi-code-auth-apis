@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
-use App\Http\Controllers\Api\ServiceController;
+use App\Http\Controllers\API\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,8 @@ Route::group(['middleware' => 'guest:sanctum'],function(){
     Route::post('user/register',[AuthController::class,'register']);
     // login api
     Route::post('user/login',[AuthController::class,'login']);
-    // get services
-    Route::get('services',[ServiceController::class,'index']);
 });
+// get services
+Route::get('services',[ServiceController::class,'index']);
+// booking service
+Route::post('service/booking',[ServiceController::class,'booking']);
