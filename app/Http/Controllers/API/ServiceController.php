@@ -4,8 +4,10 @@ namespace App\Http\Controllers\API;
 
 use App\Helpers\SetResponse;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\API\BookingRequest;
 use App\Http\Resources\API\ServiceResourceApi;
 use App\Models\Service;
+use App\Models\ServiceBooking;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -21,8 +23,9 @@ class ServiceController extends Controller
             return $this->setResponse->MakeResponse(ServiceResourceApi::collection($services),'success message',true,200);
         return $this->setResponse->MakeResponse([],'data not found',false,404);
     }
-    public function booking(Request $request)
+    public function booking(BookingRequest $request)
     {
-        return $request;
+        $data = ServiceBooking::create($request->validated());
+        return $this->setResponse->MakeResponse([],'success message',true,200);
     }
 }
